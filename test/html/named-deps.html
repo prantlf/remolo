@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgo=">
+    <script src="../../dist/remolo.js"></script>
+    <script src="../js/browser-util.js"></script>
+    <script>
+      define('ultimate', { answer: 42 })
+      define('galaxy', ['ultimate'], ultimate => {
+        return { ultimate }
+      })
+      require(['galaxy', 'ultimate'], (galaxy, ultimate) => {
+        console.log('imported', JSON.stringify(galaxy), JSON.stringify(ultimate))
+        tryRequire('galaxy')
+        tryRequire('ultimate')
+      })
+    </script>
+  </head>
+</html>

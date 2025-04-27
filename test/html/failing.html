@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgo=">
+    <script src="../../dist/remolo.js"></script>
+    <script>
+      require.config({
+        baseUrl: '../js'
+      })
+      require(['failing'], () => {}, error => {
+        console.error('failing', error)
+      })
+    </script>
+  </head>
+</html>

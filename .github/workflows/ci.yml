@@ -1,0 +1,36 @@
+name: Build, Test and Release
+
+on:
+  push:
+    branches:
+      - master
+    tags-ignore:
+      - '**'
+    paths-ignore:
+      - '**/*.md'
+      - LICENSE
+  pull_request:
+
+jobs:
+  build-test-release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: oven-sh/setup-bun@v2
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 'lts/*'
+        registry-url: 'https://registry.npmjs.org'
+    - uses: prantlf/bump-version-action@v2
+      id: bump
+    - run: bun i
+    - run: bun run build
+    - run: bunx playwright install chromium-headless-shell
+    - run: bun run test
+    - uses: prantlf/finish-release-action@v1
+      if: ${{ github.ref_name == 'master' && steps.bump.outputs.bumped == 'true' }}
+      with:
+        no-archives: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

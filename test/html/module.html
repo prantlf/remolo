@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgo=">
+    <script src="../../dist/remolo.js"></script>
+    <script src="../js/browser-util.js"></script>
+    <script>
+      define('ultimate', ['module'], module => {
+        const config = module.config()
+        console.log('id', module.id)
+        console.log('uri', module.uri)
+      })
+      require(['ultimate'], () => {})
+    </script>
+  </head>
+</html>

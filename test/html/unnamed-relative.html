@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgo=">
+    <script src="../../dist/remolo.js"></script>
+    <script src="../js/browser-util.js"></script>
+    <script>
+      require.config({
+        baseUrl: '../js'
+      })
+      tryRequire('galaxy-relative')
+      tryRequire('ultimate')
+      require(['galaxy-relative'], galaxy => {
+        console.log('imported', JSON.stringify(galaxy))
+        tryRequire('galaxy-relative')
+        tryRequire('ultimate')
+      })
+    </script>
+  </head>
+</html>

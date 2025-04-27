@@ -1,0 +1,39 @@
+{
+  "name": "remolo",
+  "version": "0.0.1",
+  "description": "AMD module loader compatible with RequireJS for modern web browsers.",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "type": "module",
+  "exports": {
+    "/loader": "./build/loader.js"
+  },
+  "bin": {
+    "remolo-create": "build/create.js"
+  },
+  "files": [
+    "build",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "bun scripts/build.js",
+    "lint": "biome lint build scripts src test",
+    "start": "bun scripts/serve.js",
+    "watch": "bun scripts/watch.js",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "@rollup/plugin-virtual": "^3.0.2",
+    "rollup": "^4.40.0",
+    "rollup-plugin-sourcemaps2": "^0.5.1",
+    "rollup-plugin-swc-minify": "^1.2.0",
+    "rollup-sourcemap-path-transform": "^1.1.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@playwright/test": "^1.52.0",
+    "picocolors": "^1.1.1"
+  }
+}

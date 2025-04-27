@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgo=">
+    <script src="../../dist/remolo.js"></script>
+    <script src="../js/browser-util.js"></script>
+    <script>
+      tryRequire('ultimate')
+      define('ultimate', { answer: 42 })
+      tryRequire('ultimate')
+      require(['ultimate'], ultimate => {
+        console.log('imported', JSON.stringify(ultimate))
+        tryRequire('ultimate')
+      })
+    </script>
+  </head>
+</html>

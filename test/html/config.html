@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgo=">
+    <script src="../../dist/remolo.js"></script>
+    <script src="../js/browser-util.js"></script>
+    <script>
+      require.config({
+        config: {
+          ultimate: {
+            question: null,
+            answer: 42
+          }
+        }
+      })
+      define('ultimate', ['module'], module => {
+        let config = module.config()
+        console.log('config', config)
+        require.config({
+          config: {
+            ultimate: { answer: 41 }
+          }
+        })
+        config = module.config()
+        console.log('config', config)
+      })
+      require(['ultimate'], () => {})
+    </script>
+  </head>
+</html>
