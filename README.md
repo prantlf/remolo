@@ -41,16 +41,16 @@ Use Bun, Deno or Node.js with the package manager of your choice, for example:
 
 Installed files:
 
-| File                                         | Note                                                                 |
-|:---------------------------------------------|:---------------------------------------------------------------------|
-| `remolo/loader`                              | module with functions for generating the module loader               |
-| `remolo-create`                              | command-line script for generating a script with the module loader   |
-| `node_modules/remolo/dist/remolo.js`         | not minified module loader declaring not namespaced global functions |
-| `node_modules/remolo/dist/remolo.js.map`     | source map for the script above                                      |
-| `node_modules/remolo/dist/remolo.js.sri`     | sub-resource integrity checksumfor the script above                  |
-| `node_modules/remolo/dist/remolo.min.js`     | minified module loader declaring not namespaced global functions     |
-| `node_modules/remolo/dist/remolo.min.js.map` | source map for the script above                                      |
-| `node_modules/remolo/dist/remolo.min.js.sri` | sub-resource integrity checksum for the script above                 |
+| File                                       | Note                                                                 |
+|:-------------------------------------------|:---------------------------------------------------------------------|
+| remolo/loader                              | module with functions for generating the module loader               |
+| remolo-create                              | command-line script for generating a script with the module loader   |
+| node_modules/remolo/dist/remolo.js         | not minified module loader declaring not namespaced global functions |
+| node_modules/remolo/dist/remolo.js.map     | source map for the script above                                      |
+| node_modules/remolo/dist/remolo.js.sri     | sub-resource integrity checksumfor the script above                  |
+| node_modules/remolo/dist/remolo.min.js     | minified module loader declaring not namespaced global functions     |
+| node_modules/remolo/dist/remolo.min.js.map | source map for the script above                                      |
+| node_modules/remolo/dist/remolo.min.js.sri | sub-resource integrity checksum for the script above                 |
 
 ## Examples
 
